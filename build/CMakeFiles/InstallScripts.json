@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/hpenvy/lab/opengl-test/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

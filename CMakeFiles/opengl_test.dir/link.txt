@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/opengl_test.dir/link.d CMakeFiles/opengl_test.dir/src/main.cpp.o -o opengl_test  lib/libglfw3.a
