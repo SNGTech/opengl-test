@@ -147,4 +147,6 @@ CMakeFiles/opengl_test.dir/src/main.cpp.o: \
  /usr/include/c++/14.2.1/bits/locale_facets.tcc \
  /usr/include/c++/14.2.1/bits/basic_ios.tcc \
  /usr/include/c++/14.2.1/bits/ostream.tcc /usr/include/c++/14.2.1/istream \
- /usr/include/c++/14.2.1/bits/istream.tcc
+ /usr/include/c++/14.2.1/bits/istream.tcc \
+ /usr/include/c++/14.2.1/iterator \
+ /usr/include/c++/14.2.1/bits/stream_iterator.h

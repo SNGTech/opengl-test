@@ -1,5 +1,8 @@
 ---
-Language:    	Cpp
+Language: Cpp
 BasedOnStyle: LLVM
 SortIncludes: false
 IndentWidth: 2
+ColumnLimit: 120
+BinPackArguments: false
+BinPackParameters: false

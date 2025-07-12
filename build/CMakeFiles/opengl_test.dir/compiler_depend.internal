@@ -198,6 +198,7 @@ CMakeFiles/opengl_test.dir/src/main.cpp.o
  /usr/include/c++/14.2.1/bits/stl_iterator_base_funcs.h
  /usr/include/c++/14.2.1/bits/stl_iterator_base_types.h
  /usr/include/c++/14.2.1/bits/stl_pair.h
+ /usr/include/c++/14.2.1/bits/stream_iterator.h
  /usr/include/c++/14.2.1/bits/streambuf.tcc
  /usr/include/c++/14.2.1/bits/streambuf_iterator.h
  /usr/include/c++/14.2.1/bits/string_view.tcc
@@ -228,6 +229,7 @@ CMakeFiles/opengl_test.dir/src/main.cpp.o
  /usr/include/c++/14.2.1/iosfwd
  /usr/include/c++/14.2.1/iostream
  /usr/include/c++/14.2.1/istream
+ /usr/include/c++/14.2.1/iterator
  /usr/include/c++/14.2.1/new
  /usr/include/c++/14.2.1/ostream
  /usr/include/c++/14.2.1/pstl/pstl_config.h

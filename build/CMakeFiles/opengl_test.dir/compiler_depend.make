@@ -196,6 +196,7 @@ CMakeFiles/opengl_test.dir/src/main.cpp.o: /home/hpenvy/lab/opengl-test/src/main
   /usr/include/c++/14.2.1/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/14.2.1/bits/stl_iterator_base_types.h \
   /usr/include/c++/14.2.1/bits/stl_pair.h \
+  /usr/include/c++/14.2.1/bits/stream_iterator.h \
   /usr/include/c++/14.2.1/bits/streambuf.tcc \
   /usr/include/c++/14.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/14.2.1/bits/string_view.tcc \
@@ -226,6 +227,7 @@ CMakeFiles/opengl_test.dir/src/main.cpp.o: /home/hpenvy/lab/opengl-test/src/main
   /usr/include/c++/14.2.1/iosfwd \
   /usr/include/c++/14.2.1/iostream \
   /usr/include/c++/14.2.1/istream \
+  /usr/include/c++/14.2.1/iterator \
   /usr/include/c++/14.2.1/new \
   /usr/include/c++/14.2.1/ostream \
   /usr/include/c++/14.2.1/pstl/pstl_config.h \
@@ -334,8 +336,6 @@ CMakeFiles/opengl_test.dir/src/main.cpp.o:
 
 /usr/include/linux/sched/types.h:
 
-/usr/include/errno.h:
-
 /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
 
 /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
@@ -404,6 +404,10 @@ CMakeFiles/opengl_test.dir/src/main.cpp.o:
 
 /usr/include/c++/14.2.1/bits/streambuf.tcc:
 
+/usr/include/errno.h:
+
+/usr/include/c++/14.2.1/bits/stream_iterator.h:
+
 /usr/lib/libm.so.6:
 
 /usr/include/c++/14.2.1/bits/stl_iterator_base_types.h:
@@ -457,6 +461,8 @@ CMakeFiles/opengl_test.dir/src/main.cpp.o:
 /usr/include/endian.h:
 
 /usr/include/bits/types/cookie_io_functions_t.h:
+
+/usr/include/c++/14.2.1/iterator:
 
 /usr/include/bits/stdint-uintn.h:
 
