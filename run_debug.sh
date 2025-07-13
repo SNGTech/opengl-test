@@ -2,4 +2,7 @@
 
 ./compile.sh
 
-./build/opengl_test
+cd build && ./opengl_test
+
+# Go back to project root directory
+cd ..

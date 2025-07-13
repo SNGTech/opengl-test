@@ -3,6 +3,7 @@ opengl_test: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o \
   CMakeFiles/opengl_test.dir/src/main.cpp.o \
+  CMakeFiles/opengl_test.dir/src/shader.cpp.o \
   CMakeFiles/opengl_test.dir/src/gl.c.o \
   /home/hpenvy/lab/opengl-test/lib/libglfw3.a \
   /usr/lib/libOpenGL.so \
@@ -43,6 +44,8 @@ opengl_test: \
 /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o:
 
 CMakeFiles/opengl_test.dir/src/main.cpp.o:
+
+CMakeFiles/opengl_test.dir/src/shader.cpp.o:
 
 CMakeFiles/opengl_test.dir/src/gl.c.o:
 

@@ -7,6 +7,12 @@
 },
 {
   "directory": "/home/hpenvy/lab/opengl-test/build",
+  "command": "/usr/bin/c++  -I/home/hpenvy/lab/opengl-test/include -g -o CMakeFiles/opengl_test.dir/src/shader.cpp.o -c /home/hpenvy/lab/opengl-test/src/shader.cpp",
+  "file": "/home/hpenvy/lab/opengl-test/src/shader.cpp",
+  "output": "CMakeFiles/opengl_test.dir/src/shader.cpp.o"
+},
+{
+  "directory": "/home/hpenvy/lab/opengl-test/build",
   "command": "/usr/bin/cc  -I/home/hpenvy/lab/opengl-test/include -g -o CMakeFiles/opengl_test.dir/src/gl.c.o -c /home/hpenvy/lab/opengl-test/src/gl.c",
   "file": "/home/hpenvy/lab/opengl-test/src/gl.c",
   "output": "CMakeFiles/opengl_test.dir/src/gl.c.o"

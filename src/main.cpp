@@ -1,10 +1,11 @@
+#include "shader.hpp"
+#include <cmath>
 #include <cstddef>
 #include <cstdio>
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
 
 #include <iostream>
-#include <iterator>
 
 #define WIDTH 800
 #define HEIGHT 600
@@ -12,23 +13,6 @@
 
 void framebuffer_size_callback(GLFWwindow *, int width, int height);
 void process_input(GLFWwindow *window);
-
-// REFACTOR LATER INTO STANDALONE SHADER CLASS
-const char *vertexShaderSource = "#version 460 core                                    \n"
-                                 "layout (location = 0) in vec3 aPos;                  \n"
-                                 "                                                     \n"
-                                 "void main()                                          \n"
-                                 "{                                                    \n"
-                                 "  gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0f);  \n"
-                                 "}                                                    \n";
-
-const char *fragmentShaderSource = "#version 460 core                                  \n"
-                                   "out vec4 FragColour;                               \n"
-                                   "                                                   \n"
-                                   "void main()                                        \n"
-                                   "{                                                  \n"
-                                   "  FragColour = vec4(0.49f, 0.67f, 0.55f, 1.0f);    \n"
-                                   "}                                                  \n";
 
 int main() {
   std::cout << "Starting OpenGL Test" << std::endl;
@@ -58,61 +42,31 @@ int main() {
 
   printf("Loaded OpenGL version %i.%i\n", GLAD_VERSION_MAJOR(version), GLAD_VERSION_MINOR(version));
 
-  // ------------ Initalise Shaders and Vertices [START] ------------
-
-  // Build and compile the shader program
-  // ------------------------------------
-  GLuint vertexShader;
-  vertexShader = glCreateShader(GL_VERTEX_SHADER);
-  glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-  glCompileShader(vertexShader);
-
-  GLint success;
-  GLchar infoLog[512];
-  glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-  if (!success) {
-    glGetShaderInfoLog(vertexShader, std::size(infoLog), NULL, infoLog);
-    std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
-  }
-
-  GLuint fragmentShader;
-  fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-  glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-  glCompileShader(fragmentShader);
-  glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
-  if (!success) {
-    glGetShaderInfoLog(fragmentShader, std::size(infoLog), NULL, infoLog);
-    std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
-  }
-
-  GLuint shaderProgram;
-  shaderProgram = glCreateProgram();
-  glAttachShader(shaderProgram, vertexShader);
-  glAttachShader(shaderProgram, fragmentShader);
-  glLinkProgram(shaderProgram);
-  glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-  if (!success) {
-    glGetProgramInfoLog(shaderProgram, std::size(infoLog), NULL, infoLog);
-    std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
-  }
-
-  // After linking both shaders, both shaders are now obselete, so we can delete them
-  glDeleteShader(vertexShader);
-  glDeleteShader(fragmentShader);
+  // Initialise shaders
+  // ------------------
+  Shader shader1("data/shader/shader1.vert", "data/shader/shader1.frag");
+  Shader rainbowShader("data/shader/rainbow_v.vert", "data/shader/rainbow_v.frag");
 
   // Setup vertex data and buffers, and configure vertex attributes
   // --------------------------------------------------------------
   // clang-format off
   GLfloat vertices[] = {
-     0.5f,  0.5f, 0.0f,  // top right
-     0.5f, -0.5f, 0.0f,  // bottom right
-    -0.5f, -0.5f, 0.0f,  // bottom left
-    -0.5f,  0.5f, 0.0f   // top left   
+    // positions         // colours
+     0.5f,  0.5f, 0.0f,  0.8f, 0.0f, 0.0f,     // top right
+     0.5f, -0.5f, 0.0f,  0.0f, 0.05f, 0.05f,   // bottom right
+    -0.5f, -0.5f, 0.0f,  0.1f, 0.0f, 0.8f,     // bottom left
+    -0.5f,  0.5f, 0.0f,  0.0f, 0.75f, 0.2f,    // top left   
   };
   GLuint indices[] = {
     0, 1, 3, // first triangle
     1, 2, 3, // second triangle
   };
+  // float vertices[] = {
+  //   // positions         // colors
+  //    0.5f, -0.5f, 0.0f,  0.8f, 0.0f, 0.0f,   // bottom right
+  //   -0.5f, -0.5f, 0.0f,  0.0f, 0.8f, 0.0f,   // bottom left
+  //    0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 0.8f    // top 
+  // };  
   // clang-format on 
 
   GLuint VBO, VAO, EBO;
@@ -125,20 +79,21 @@ int main() {
   // Bind and set vertex buffer
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-  // Bind and set element buffer
+  // // Bind and set element buffer
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
   // Set vertex attributes
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (void*)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (void*)0);
   glEnableVertexAttribArray(0);
+  // Set colour of each vertex using rainbow_v shaders
+  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
+  glEnableVertexAttribArray(1);
 
   // Unbind vertex objects (not necessary) *unbind VAO and VBO first before unbinding EBO 
   // glBindVertexArray(0);
   // glBindBuffer(GL_ARRAY_BUFFER, 0);
   // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
  
-  // ------------- Initalise Shaders and Vertices [END] -------------
-
   // Enable/disable wireframe mode
   glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
@@ -147,12 +102,19 @@ int main() {
     // Input
     process_input(window);
 
-    // ------------ Rendering Logic [START] ------------
-
+    // Render logic
+    // ------------
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    glUseProgram(shaderProgram);
+    rainbowShader.use(); 
+
+    // Animate triangle colour
+    // float time = glfwGetTime();
+    // float triangleRGBA = std::sin(time * 2.0f) + 0.5f;
+    // shader1.setUniform4f("vertexColour", 0.0f, triangleRGBA * 0.2f, triangleRGBA, 1.0f);
+
+    // Render triangle
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     // glDrawArrays(GL_TRIANGLES, 0, 3);
