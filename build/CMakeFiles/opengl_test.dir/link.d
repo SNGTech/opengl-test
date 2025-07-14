@@ -5,6 +5,7 @@ opengl_test: \
   CMakeFiles/opengl_test.dir/src/main.cpp.o \
   CMakeFiles/opengl_test.dir/src/shader.cpp.o \
   CMakeFiles/opengl_test.dir/src/gl.c.o \
+  CMakeFiles/opengl_test.dir/src/stb.cpp.o \
   /home/hpenvy/lab/opengl-test/lib/libglfw3.a \
   /usr/lib/libOpenGL.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libstdc++.so \
@@ -48,6 +49,8 @@ CMakeFiles/opengl_test.dir/src/main.cpp.o:
 CMakeFiles/opengl_test.dir/src/shader.cpp.o:
 
 CMakeFiles/opengl_test.dir/src/gl.c.o:
+
+CMakeFiles/opengl_test.dir/src/stb.cpp.o:
 
 /home/hpenvy/lab/opengl-test/lib/libglfw3.a:
 

@@ -16,5 +16,11 @@
   "command": "/usr/bin/cc  -I/home/hpenvy/lab/opengl-test/include -g -o CMakeFiles/opengl_test.dir/src/gl.c.o -c /home/hpenvy/lab/opengl-test/src/gl.c",
   "file": "/home/hpenvy/lab/opengl-test/src/gl.c",
   "output": "CMakeFiles/opengl_test.dir/src/gl.c.o"
+},
+{
+  "directory": "/home/hpenvy/lab/opengl-test/build",
+  "command": "/usr/bin/c++  -I/home/hpenvy/lab/opengl-test/include -g -o CMakeFiles/opengl_test.dir/src/stb.cpp.o -c /home/hpenvy/lab/opengl-test/src/stb.cpp",
+  "file": "/home/hpenvy/lab/opengl-test/src/stb.cpp",
+  "output": "CMakeFiles/opengl_test.dir/src/stb.cpp.o"
 }
 ]

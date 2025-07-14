@@ -201,6 +201,30 @@ src/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_test.dir/build.make CMakeFiles/opengl_test.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
 
+src/stb.o: src/stb.cpp.o
+.PHONY : src/stb.o
+
+# target to build an object file
+src/stb.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_test.dir/build.make CMakeFiles/opengl_test.dir/src/stb.cpp.o
+.PHONY : src/stb.cpp.o
+
+src/stb.i: src/stb.cpp.i
+.PHONY : src/stb.i
+
+# target to preprocess a source file
+src/stb.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_test.dir/build.make CMakeFiles/opengl_test.dir/src/stb.cpp.i
+.PHONY : src/stb.cpp.i
+
+src/stb.s: src/stb.cpp.s
+.PHONY : src/stb.s
+
+# target to generate assembly for a file
+src/stb.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_test.dir/build.make CMakeFiles/opengl_test.dir/src/stb.cpp.s
+.PHONY : src/stb.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,6 +243,9 @@ help:
 	@echo "... src/shader.o"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"
+	@echo "... src/stb.o"
+	@echo "... src/stb.i"
+	@echo "... src/stb.s"
 .PHONY : help
 
 

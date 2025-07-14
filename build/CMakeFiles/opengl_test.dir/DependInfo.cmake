@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/hpenvy/lab/opengl-test/src/gl.c" "CMakeFiles/opengl_test.dir/src/gl.c.o" "gcc" "CMakeFiles/opengl_test.dir/src/gl.c.o.d"
   "/home/hpenvy/lab/opengl-test/src/main.cpp" "CMakeFiles/opengl_test.dir/src/main.cpp.o" "gcc" "CMakeFiles/opengl_test.dir/src/main.cpp.o.d"
   "/home/hpenvy/lab/opengl-test/src/shader.cpp" "CMakeFiles/opengl_test.dir/src/shader.cpp.o" "gcc" "CMakeFiles/opengl_test.dir/src/shader.cpp.o.d"
+  "/home/hpenvy/lab/opengl-test/src/stb.cpp" "CMakeFiles/opengl_test.dir/src/stb.cpp.o" "gcc" "CMakeFiles/opengl_test.dir/src/stb.cpp.o.d"
   "" "opengl_test" "gcc" "CMakeFiles/opengl_test.dir/link.d"
   )
 

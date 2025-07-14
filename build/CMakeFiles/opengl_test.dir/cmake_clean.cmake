@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/opengl_test.dir/src/main.cpp.o.d"
   "CMakeFiles/opengl_test.dir/src/shader.cpp.o"
   "CMakeFiles/opengl_test.dir/src/shader.cpp.o.d"
+  "CMakeFiles/opengl_test.dir/src/stb.cpp.o"
+  "CMakeFiles/opengl_test.dir/src/stb.cpp.o.d"
   "opengl_test"
   "opengl_test.pdb"
 )

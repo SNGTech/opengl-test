@@ -106,7 +106,9 @@ CMakeFiles/opengl_test.dir/src/main.cpp.o: \
  /usr/include/c++/14.2.1/cstddef \
  /usr/include/c++/14.2.1/bits/uses_allocator.h \
  /usr/include/c++/14.2.1/bits/uses_allocator_args.h \
- /usr/include/c++/14.2.1/tuple /usr/include/c++/14.2.1/cmath \
+ /usr/include/c++/14.2.1/tuple \
+ /home/hpenvy/lab/opengl-test/src/stb_image.h \
+ /usr/include/c++/14.2.1/stdlib.h /usr/include/c++/14.2.1/cmath \
  /usr/include/math.h /usr/include/bits/math-vector.h \
  /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
